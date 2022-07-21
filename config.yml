@@ -1,0 +1,11 @@
+_format_version: "1.1"
+services:
+- url: http://192.168.1.7:8181/api/v1/worktype/testworktype/tasks
+  routes:
+  - paths:
+    - "/"
+  plugins:
+  - name: key-checker
+    config:
+     s3endpoint: http://192.168.1.7:4566
+     region: us-east-1

@@ -109,8 +109,8 @@ func extractClientIdFromRequest(kong *pdk.PDK) string {
 
 	var clientID string
 	if claims, ok := token.Claims.(jwt.MapClaims); ok {
-		clientID = claims["sub"].(string)
-		kong.Log.Err("clientID = " + clientID)
+		clientID = claims["cid"].(string)
+		kong.Log.Err("clientID from cid= " + clientID)
 	} else {
 		kong.Log.Err(string(err.Error()))
 	}
